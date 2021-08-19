@@ -260,8 +260,10 @@ footer a:hover {
     margin: 5%
 }
 
-.construction {
-    display: none;
+.more {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 5%;
 }
 
 /*Tablet styling*/
@@ -313,5 +315,9 @@ footer a:hover {
 @media (min-width:1200px){
     .about p{
         width: 30%;
+    }
+
+    .App {
+      margin: 0 15%;
     }
 }

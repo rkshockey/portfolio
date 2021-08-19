@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Projects from './components/Projects';
 
 function App() {
   const [reload, setReload] = useState(true)
@@ -29,7 +30,7 @@ function App() {
           <Contact />
         </Route>
         <Route path='/projects'>
-
+          <Projects/>
         </Route>
       </Switch>
       <Footer reset={reset}/>
