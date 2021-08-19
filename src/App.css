@@ -1,38 +1,317 @@
-.App {
-  text-align: center;
+/* reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*General styles*/
+* {
+    box-sizing:border-box;
+    max-width:100%;
+    margin:0;
+    padding:0;
+}
+html {
+    font-size:62.5%
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-size: 1.6rem;
+    color:#4f4f4f;
+    line-height:1.5;
+    font-family: 'Montserrat', sans-serif;
+    background:#80d3a0
+    /*#b4eeca*/
+}
+h1 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 4rem;
+    color: #0822cc
+}
+h2 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.link, .footer-link {
+    color:#4f4f4f;
+    text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+/*header styling*/
+header {
+    padding:4%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+header h2 {
+    font-size: 3rem;
+}
+.head-button {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes flip {
+    0% {transform: rotate (0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+.link{
+    width:40%;
+    background: lightgrey;
+    border: 2px solid darkolivegreen;
+    margin:1%;
+    text-align: center;
+    padding: 2%;
+    text-decoration: none;
+}
+.link:hover {
+    animation-name: flip;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+}
+
+/*splash styling*/
+
+.splash {
+    margin: 10%;
+    margin-top: 0;
+    height:60vh;
+    background-image: url(./assets/dancing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-link{
+    margin: 1%;
+    padding: 1%;
+    background: #8a8c84;
+    color: #0822cc;
+    border-radius: 25%;
+    border: 2px solid #E0115F;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+@keyframes grow {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+.splash-link:hover {
+    animation-name: grow;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+}
+
+/*gallery styling*/
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    align-content:space-around;
+}
+
+.gallery-item {
+    display:flex;
+    flex-direction: column;
+    width: 45%;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+/*footer styling*/
+footer {
+    background-image: url(./assets/stars.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+}
+
+footer a, .footer-link{
+    margin:auto;
+    padding: 1%;
+    background: lightgrey;
+    border: 2px solid darkolivegreen;
+    border-radius: 15%;
+    text-decoration: none;
+}
+
+footer a:hover {
+    animation-name: grow;
+    animation-duration: 1s;
+    animation-iteration-count: 3;
+}
+.here {
+    background: black;
+    color: white;
+}
+.here:hover {
+    animation: none;
+}
+
+/*About page styling*/
+.about h2 {
+    text-align: center;
+}
+.about .left, .about .right {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+.about .left div, .about .right div{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0;
+}
+.about p{
+    width: 45%;
+    margin: 5% 0;
+}
+
+/*Contact page styling*/
+.contact h2 {
+    text-align: center;
+}
+.contact .flex{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.contact img, .contact .text{
+    width: 45%;
+    margin:10% 2%;
+    text-align: center;
+}
+.contact a{
+    color:blue;
+    text-decoration: underline;
+}
+
+/*Project page styling*/
+.projects {
+    text-align: center;
+}
+.between {
+    display:flex;
+    justify-content: space-between;
+    margin: 5%
+}
+.around {
+    display:flex;
+    justify-content: space-around;
+    margin: 5%
+}
+
+.construction {
+    display: none;
+}
+
+/*Tablet styling*/
+@media (min-width: 500px){
+    .gallery-item{
+        width: 30%;
+    }
+
+    /*About Page tablet*/
+    img.mobile{
+        display: none;
+    }
+
+    /*Projects page tablet*/
+    .construction {
+        display: inline;
+    }
+}
+
+@media (min-width:550px) {
+    header {
+        flex-direction: row;
+    }
+    .head-button {
+        flex-direction: row;
+        width: 60%;
+    }
+}
+
+/*Desktop styling*/
+@media (min-width:800px){
+    h1 {
+        font-size: 5rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    /*About desktop*/
+    .about .left div, .about .right div{
+        width: 30%;
+    }
+    /*Contact desktop*/
+    .contact img, .contact .text{
+        width: 20%;
+    }
+}
+
+/*Widescreen styling*/
+@media (min-width:1200px){
+    .about p{
+        width: 30%;
+    }
 }
